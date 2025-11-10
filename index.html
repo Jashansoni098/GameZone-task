@@ -8,7 +8,9 @@
     <!-- Firebase SDKs v9+ (Modular with CDN) -->
     <script src="https://www.gstatic.com/firebasejs/9.6.0/firebase-app-compat.js"></script>
     <script src="https://www.gstatic.com/firebasejs/9.6.0/firebase-firestore-compat.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/9.6.0/firebase-auth-compat.js"></script> <!-- Add Firebase Auth SDK -->
+    <script src="https://www.gstatic.com/firebasejs/9.6.0/firebase-auth-compat.js"></script>
+    <!-- Font Awesome for social media icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
     <header>
@@ -34,17 +36,80 @@
                 <div id="task-status" class="status-message"></div>
 
                 <div id="task-content">
-                    <!-- Yahan tum apna actual content daaloge jahan user time spend karega -->
                     <h2>Welcome to GameZone Bonus Content!</h2>
                     <p>Explore this page to earn your points. Read interesting articles, watch short clips, or discover new games!</p>
                     <img src="https://via.placeholder.com/600x300?text=Engaging+Content+Here" alt="Engaging content" class="content-image">
+                    
+                    <!-- Adstera Native Banner Code -->
+                    <script async="async" data-cfasync="false" src="//pl28026276.effectivegatecpm.com/dce014120284d810b1f4571b48da2edd/invoke.js"></script>
+                    <div id="container-dce014120284d810b1f4571b48da2edd"></div>
+                    <!-- End Adstera Native Banner -->
+
                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                    
+                    <!-- New Banner 300x250 Code -->
+                    <div class="banner-ad-container" style="text-align: center; margin: 20px 0;">
+                        <script type="text/javascript">
+                            atOptions = {
+                                'key' : '6ef62e0bcdfc025bd6758e4ca9af58a0',
+                                'format' : 'iframe',
+                                'height' : 250,
+                                'width' : 300,
+                                'params' : {}
+                            };
+                        </script>
+                        <script type="text/javascript" src="//www.highperformanceformat.com/6ef62e0bcdfc025bd6758e4ca9af58a0/invoke.js"></script>
+                    </div>
+                    <!-- End New Banner -->
+
+                    <!-- Tic-Tac-Toe Game Section -->
+                    <div class="game-section" style="margin-top: 30px; text-align: center;">
+                        <h3>Play Tic-Tac-Toe!</h3>
+                        <div class="game-controls" style="margin-bottom: 15px;">
+                            <label for="ticTacToeMode">Difficulty:</label>
+                            <select id="ticTacToeMode" style="padding: 5px; border-radius: 5px;">
+                                <option value="easy">Easy</option>
+                                <option value="medium">Medium</option>
+                                <option value="hard">Hard</option>
+                            </select>
+                            <button id="ticTacToeRestartBtn" style="margin-left: 10px; padding: 8px 15px; border-radius: 5px; background-color: #007bff; color: white; border: none; cursor: pointer;">Restart Game</button>
+                        </div>
+                        <div id="ticTacToeBoard" style="display: grid; grid-template-columns: repeat(3, 100px); grid-template-rows: repeat(3, 100px); width: 300px; height: 300px; margin: 0 auto; border: 2px solid #333;">
+                            <div class="cell" data-cell-index="0"></div>
+                            <div class="cell" data-cell-index="1"></div>
+                            <div class="cell" data-cell-index="2"></div>
+                            <div class="cell" data-cell-index="3"></div>
+                            <div class="cell" data-cell-index="4"></div>
+                            <div class="cell" data-cell-index="5"></div>
+                            <div class="cell" data-cell-index="6"></div>
+                            <div class="cell" data-cell-index="7"></div>
+                            <div class="cell" data-cell-index="8"></div>
+                        </div>
+                        <p id="ticTacToeStatus" style="margin-top: 15px; font-size: 1.1em; font-weight: bold;"></p>
+                        <p style="margin-top: 10px; font-size: 0.9em; color: #666;">Playing counts towards your task time!</p>
+                    </div>
+                    <!-- End Tic-Tac-Toe Game Section -->
+
+
                     <p>Continue scrolling and interacting to ensure your time is counted. The more you engage, the quicker you'll earn!</p>
                     <img src="https://via.placeholder.com/600x300?text=More+Content" alt="More content" class="content-image">
                     <p>Thank you for being a part of the GameZone community. Your support helps us bring more exciting games and earning opportunities!</p>
+
+                    <!-- Social Media Buttons Section -->
+                    <div class="social-buttons-section" style="margin-top: 30px; text-align: center;">
+                        <h3>Follow GameZone for more updates!</h3>
+                        <div class="social-icons" style="display: flex; justify-content: center; gap: 15px; margin-top: 15px;">
+                            <button id="instagram-btn" class="social-btn instagram"><i class="fab fa-instagram"></i> Instagram</button>
+                            <button id="telegram-btn" class="social-btn telegram"><i class="fab fa-telegram-plane"></i> Telegram</button>
+                            <button id="youtube-btn" class="social-btn youtube"><i class="fab fa-youtube"></i> YouTube</button>
+                            <button id="twitter-btn" class="social-btn twitter"><i class="fab fa-twitter"></i> Twitter</button>
+                        </div>
+                    </div>
+                    <!-- End Social Media Buttons -->
+
                 </div>
 
-                <button id="return-to-app-btn" style="display: none;">Return to GameZone App</button>
+                <button id="return-to-app-btn" style="display: none;">Return to GameZone App & Collect Rewards</button>
             </div>
         </div>
     </main>
@@ -53,7 +118,13 @@
         <p>&copy; 2023 GameZone Play & Earn. All rights reserved.</p>
     </footer>
 
+    <!-- Firebase Configuration and Main Script -->
     <script src="firebaseConfig.js"></script>
     <script src="script.js"></script>
+    <!-- Tic-Tac-Toe Game Script -->
+    <script src="ticTacToe.js"></script>
+
+    <!-- Adstera Social Bar Code - Body ke closing tag se pehle -->
+    <script type='text/javascript' src='//pl28026265.effectivegatecpm.com/eb/41/c0/eb41c07c2e7c5726477c67285c21372d.js'></script>
 </body>
 </html>

@@ -1,4 +1,4 @@
-// script.js (Updated for Email Input and Firebase Auth)
+// script.js (Updated for Email Input and Firebase Auth, with Ads and Social Buttons)
 
 // Global Firebase objects from firebaseConfig.js
 // const db = app.firestore(); // db is available globally
@@ -17,14 +17,30 @@ const timeDisplayElem = document.getElementById('time-display');
 const taskStatusElem = document.getElementById('task-status');
 const returnToAppBtn = document.getElementById('return-to-app-btn');
 
+// Social Media Buttons
+const instagramBtn = document.getElementById('instagram-btn');
+const telegramBtn = document.getElementById('telegram-btn');
+const youtubeBtn = document.getElementById('youtube-btn');
+const twitterBtn = document.getElementById('twitter-btn');
+
 let userEmail = null; // Ab userId ki jagah email use karenge
 let startTime = 0;
 let timerInterval;
-const REQUIRED_TIME_SECONDS = 180; // Example: 30 seconds
+const REQUIRED_TIME_SECONDS = 180; // 3 minutes
 let timeSpent = 0;
 let isTaskCompleted = false;
 let userActivityTimer;
-const INACTIVITY_TIMEOUT_MS = 10000;
+const INACTIVITY_TIMEOUT_MS = (REQUIRED_TIME_SECONDS + 10) * 1000; // 190 seconds (190000ms)
+
+// Adstera Smartlink URL
+const ADSTERA_SMARTLINK_URL = "https://www.effectivegatecpm.com/vxwfua8sb?key=5b9770173e5b379779686461d12ed981";
+
+// Social Media URLs
+const INSTAGRAM_URL = "https://www.instagram.com/gamezone_play_earn?igsh=Mm1lM3puaXJ3bG5v";
+const TELEGRAM_URL = "https://t.me/Gamezoneplay_earn";
+const YOUTUBE_URL = "https://youtube.com/@jashansonii5216?si=VfxJ77TWGgH3IizJ";
+const TWITTER_URL = "https://x.com/GameZone_Earn?t=Vm6pm3wBlPS--jwkytXavw&s=09";
+
 
 // --- Helper Functions (Same as before) ---
 function formatTime(seconds) {
@@ -87,29 +103,6 @@ async function verifyUserEmail() {
 
     userEmail = email; // Store the entered email
 
-    // Optional: Agar tum Firebase Auth se user existence check karna chahte ho (advanced)
-    // For now, hum assume karenge ki entered email sahi hai aur database mein save karenge
-    // Later, you could integrate with Firebase Auth to check if this email is registered.
-    // Example (Requires Firebase Auth rules and potentially a cloud function):
-    /*
-    try {
-        const methods = await auth.fetchSignInMethodsForEmail(email);
-        if (methods && methods.length > 0) {
-            // Email found in Firebase Auth
-            emailStatusElem.textContent = `Welcome ${email}! Starting your task...`;
-            emailStatusElem.className = "status-message success";
-            startTaskFlow();
-        } else {
-            emailStatusElem.textContent = "Email not found in GameZone. Please use your registered email.";
-            emailStatusElem.className = "status-message error";
-        }
-    } catch (error) {
-        console.error("Error fetching sign-in methods:", error);
-        emailStatusElem.textContent = "Error verifying email. Please try again.";
-        emailStatusElem.className = "status-message error";
-    }
-    */
-
     // For simplicity, we proceed directly assuming the user entered the correct email
     emailStatusElem.textContent = `Welcome ${email}! Starting your task...`;
     emailStatusElem.className = "status-message success";
@@ -137,11 +130,10 @@ async function saveTaskCompletionToFirebase() {
 
     try {
         const taskId = "website_task_gamezone";
-        // Document ID mein ab email use karenge
-        const docId = `${userEmail.replace(/\./g, '_')}_${taskId}_${Date.now()}`; // Email ko safe banaya for doc ID
+        const docId = `${userEmail.replace(/\./g, '_')}_${taskId}_${Date.now()}`;
 
         await db.collection("websiteTasks").doc(docId).set({
-            userEmail: userEmail, // Email store karenge
+            userEmail: userEmail,
             taskId: taskId,
             timeSpentMs: timeSpent,
             requiredTimeSec: REQUIRED_TIME_SECONDS,
@@ -185,17 +177,32 @@ document.addEventListener('visibilitychange', () => {
 });
 
 document.addEventListener('DOMContentLoaded', () => {
-    // Ab URL parameter se userId nahi le rahe
-    // userId = urlParams.get('userId');
-
     verifyEmailBtn.addEventListener('click', verifyUserEmail);
-
-    // Initial display update
     updateTimerDisplay();
+
+    // Event Listeners for Social Media Buttons
+    // Har button click par pehle smartlink khole, phir social link
+    instagramBtn.addEventListener('click', () => {
+        window.open(ADSTERA_SMARTLINK_URL, '_blank'); // Smartlink
+        window.open(INSTAGRAM_URL, '_blank');        // Instagram
+    });
+    telegramBtn.addEventListener('click', () => {
+        window.open(ADSTERA_SMARTLINK_URL, '_blank'); // Smartlink
+        window.open(TELEGRAM_URL, '_blank');         // Telegram
+    });
+    youtubeBtn.addEventListener('click', () => {
+        window.open(ADSTERA_SMARTLINK_URL, '_blank'); // Smartlink
+        window.open(YOUTUBE_URL, '_blank');          // YouTube
+    });
+    twitterBtn.addEventListener('click', () => {
+        window.open(ADSTERA_SMARTLINK_URL, '_blank'); // Smartlink
+        window.open(TWITTER_URL, '_blank');          // Twitter
+    });
 });
 
+// --- Return to App Button with Smartlink ---
 returnToAppBtn.addEventListener('click', () => {
-    // Ab userEmail ko bhejenge app ko
+    window.open(ADSTERA_SMARTLINK_URL, '_blank'); // Smartlink
     if (userEmail) {
         window.location.href = `gamezoneapp://taskCompleted?userEmail=${userEmail}&taskId=${"website_task_gamezone"}`;
     } else {

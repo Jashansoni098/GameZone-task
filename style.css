@@ -1,3 +1,5 @@
+/* style.css */
+
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     background-color: #f0f2f5;
@@ -44,7 +46,56 @@ main {
     text-align: center;
 }
 
-#user-info, #timer {
+/* Email Input Section Styling */
+#email-input-section h2 {
+    color: #4CAF50;
+    margin-bottom: 20px;
+}
+
+#email-input-section p {
+    font-size: 1em;
+    color: #666;
+    margin-bottom: 25px;
+}
+
+#user-email {
+    width: calc(100% - 40px); /* Adjust width to account for padding */
+    padding: 12px 15px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1em;
+    box-sizing: border-box; /* Include padding and border in the element's total width and height */
+    max-width: 300px; /* Optional: limit email input width */
+}
+
+#verify-email-btn {
+    background-color: #3F51B5; /* Blue for verify button */
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    font-size: 1.1em;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#verify-email-btn:hover {
+    background-color: #303F9F;
+}
+
+#user-info {
+    font-size: 1.2em;
+    margin-bottom: 15px;
+    color: #555;
+}
+
+#logged-in-email {
+    font-weight: bold;
+    color: #4CAF50;
+}
+
+#timer {
     font-size: 1.2em;
     margin-bottom: 15px;
     color: #555;
@@ -55,11 +106,12 @@ main {
     color: #FF5722; /* Orange for timer */
 }
 
-#task-status {
+#task-status, #email-status { /* Apply common styling to both status messages */
     margin-top: 20px;
     padding: 10px;
     border-radius: 5px;
     font-weight: bold;
+    font-size: 0.95em;
 }
 
 .status-message.success {
@@ -81,11 +133,13 @@ main {
 
 #task-content h2 {
     color: #3F51B5; /* Blue heading */
+    margin-bottom: 20px;
 }
 
 #task-content p {
     line-height: 1.6;
     margin-bottom: 15px;
+    color: #444;
 }
 
 .content-image {
@@ -96,20 +150,97 @@ main {
     box-shadow: 0 2px 4px rgba(0,0,0,0.1);
 }
 
+/* New Banner Ad Container (300x250) */
+.banner-ad-container {
+    text-align: center;
+    margin: 25px 0; /* Add some vertical spacing */
+    /* Add border or background if you want to highlight the ad area */
+    /* border: 1px dashed #ccc; */
+    /* padding: 10px; */
+}
+
+
+/* Social Buttons Styling */
+.social-buttons-section {
+    margin-top: 40px; /* More space above social buttons */
+    text-align: center;
+    border-top: 1px solid #eee; /* Separator line */
+    padding-top: 25px;
+}
+
+.social-buttons-section h3 {
+    color: #3F51B5; /* Blue heading for social section */
+    margin-bottom: 25px;
+    font-size: 1.4em;
+}
+
+.social-icons {
+    display: flex;
+    flex-wrap: wrap; /* Allow buttons to wrap on smaller screens */
+    justify-content: center;
+    gap: 15px; /* Space between buttons */
+    margin-top: 15px;
+}
+
+.social-btn {
+    background-color: #f0f0f0;
+    color: #333;
+    border: 1px solid #ddd;
+    padding: 10px 20px; /* Increased padding for better touch area */
+    border-radius: 25px; /* More rounded buttons */
+    cursor: pointer;
+    font-size: 1.1em; /* Slightly larger font */
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 10px; /* Space between icon and text */
+    transition: all 0.3s ease; /* Smooth transitions for hover effects */
+    text-decoration: none; /* In case it's an anchor tag */
+    min-width: 140px; /* Ensure buttons have a minimum width */
+    justify-content: center; /* Center content within button */
+}
+
+.social-btn:hover {
+    transform: translateY(-2px); /* Slight lift effect */
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+/* Specific button colors */
+.social-btn.instagram { background-color: #E4405F; color: white; border-color: #E4405F; }
+.social-btn.instagram:hover { background-color: #C32AA3; } /* Darker on hover */
+
+.social-btn.telegram { background-color: #0088CC; color: white; border-color: #0088CC; }
+.social-btn.telegram:hover { background-color: #0077B5; }
+
+.social-btn.youtube { background-color: #FF0000; color: white; border-color: #FF0000; }
+.social-btn.youtube:hover { background-color: #CC0000; }
+
+.social-btn.twitter { background-color: #1DA1F2; color: white; border-color: #1DA1F2; }
+.social-btn.twitter:hover { background-color: #0F8ED6; }
+
+.social-btn i {
+    font-size: 1.3em; /* Larger icons */
+}
+
+/* End Social Buttons Styling */
+
+
 #return-to-app-btn {
     background-color: #FF9800; /* Orange for button */
     color: white;
     border: none;
-    padding: 12px 25px;
-    font-size: 1.1em;
-    border-radius: 5px;
+    padding: 14px 30px; /* Slightly larger padding */
+    font-size: 1.2em; /* Slightly larger font */
+    border-radius: 8px; /* More rounded */
     cursor: pointer;
-    margin-top: 30px;
-    transition: background-color 0.3s ease;
+    margin-top: 40px; /* More margin top */
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.2);
 }
 
 #return-to-app-btn:hover {
     background-color: #F57C00;
+    transform: translateY(-2px);
 }
 
 footer {
@@ -119,4 +250,336 @@ footer {
     padding: 15px 0;
     font-size: 0.9em;
     margin-top: auto;
+}
+
+/* Responsive adjustments */
+@media (max-width: 600px) {
+    header h1 {
+        font-size: 2em;
+    }
+
+    header p {
+        font-size: 1em;
+    }
+
+    .task-container {
+        padding: 20px;
+    }
+
+    #user-info, #timer {
+        font-size: 1.1em;
+    }
+
+    #email-input-section h2 {
+        font-size: 1.5em;
+    }
+
+    #user-email {
+        width: calc(100% - 30px); /* Adjust for smaller screens */
+    }
+
+    .social-icons {
+        flex-direction: column; /* Stack buttons vertically on small screens */
+        align-items: center; /* Center stacked buttons */
+        gap: 10px;
+    }
+
+    .social-btn {
+        width: 80%; /* Make buttons take more width */
+        max-width: 250px; /* Limit max width */
+        padding: 12px 15px;
+    }
+
+    #return-to-app-btn {
+        padding: 12px 20px;
+        font-size: 1.1em;
+    }
+}
+
+/* style.css */
+
+/* ... (existing styles) ... */
+
+/* Basic Social Button Styling */
+.social-btn {
+    background-color: #f0f0f0;
+    color: #333;
+    border: 1px solid #ccc;
+    padding: 10px 15px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.social-btn:hover {
+    filter: brightness(0.9);
+}
+
+/* Specific button colors (optional) */
+.social-btn.instagram { background-color: #E4405F; color: white; border-color: #E4405F; }
+.social-btn.telegram { background-color: #0088CC; color: white; border-color: #0088CC; }
+.social-btn.youtube { background-color: #FF0000; color: white; border-color: #FF0000; }
+.social-btn.twitter { background-color: #1DA1F2; color: white; border-color: #1DA1F2; }
+
+.social-btn i {
+    font-size: 20px;
+}
+
+/* Optional: Styling for game section if needed */
+.game-section {
+    background-color: #2a2a2a; /* Slightly different background for the game section */
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+/* style.css */
+
+/* ... (existing styles) ... */
+
+/* Tic-Tac-Toe Game Specific Styles */
+#ticTacToeBoard {
+    border-radius: 10px;
+    background-color: #f8f8f8;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.cell {
+    width: 100px;
+    height: 100px;
+    border: 1px solid #ccc;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 3em;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.2s ease-in-out;
+}
+
+.cell:hover {
+    background-color: #e0e0e0;
+}
+
+.cell.player-x {
+    color: #4CAF50; /* Green for X */
+}
+
+.cell.player-o {
+    color: #f44336; /* Red for O */
+}
+
+/* Optional: Make game section stand out */
+.game-section {
+    background-color: #f9f9f9;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    margin-bottom: 25px; /* Add some space below the game */
+}
+
+/* Styles for the mode selector and restart button */
+.game-controls {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+    gap: 10px;
+}
+
+/* style.css */
+
+/* ... (existing global styles, header, main, footer, task-container, button styles) ... */
+
+/* General Game Section Styling */
+.game-section {
+    background-color: #ffffff; /* Clean white background */
+    padding: 30px 20px;
+    border-radius: 12px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1); /* Deeper shadow for a floating effect */
+    margin-bottom: 30px;
+    font-family: 'Poppins', sans-serif; /* Modern font */
+    color: #333;
+    border: 1px solid #e0e0e0; /* Subtle border */
+}
+
+.game-section h3 {
+    font-size: 1.8em;
+    color: #2c3e50; /* Darker title */
+    margin-bottom: 20px;
+    font-weight: 600;
+}
+
+/* Game Controls Styling (Difficulty & Restart) */
+.game-controls {
+    display: flex;
+    flex-wrap: wrap; /* For better mobile responsiveness */
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 25px;
+    gap: 15px; /* Increase gap for spacing */
+}
+
+.game-controls label {
+    font-size: 1.1em;
+    color: #555;
+    font-weight: 500;
+}
+
+#ticTacToeMode, #ticTacToeRestartBtn {
+    padding: 12px 20px;
+    font-size: 1em;
+    border-radius: 8px; /* Slightly more rounded */
+    border: 1px solid #a0a0a0; /* Subtle border */
+    background-color: #f5f5f5; /* Light grey background */
+    color: #333;
+    cursor: pointer;
+    transition: all 0.3s ease; /* Smooth transitions */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05); /* Soft inner shadow */
+}
+
+#ticTacToeMode:focus, #ticTacToeRestartBtn:focus {
+    outline: none;
+    border-color: #007bff; /* Highlight on focus */
+    box-shadow: 0 0 0 3px rgba(0,123,255,.25); /* Focus ring */
+}
+
+#ticTacToeMode:hover {
+    background-color: #e8e8e8;
+}
+
+#ticTacToeRestartBtn {
+    background-color: #28a745; /* Clean green for restart */
+    color: white;
+    border: none;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+}
+
+#ticTacToeRestartBtn:hover {
+    background-color: #218838;
+    transform: translateY(-2px); /* Slight lift effect */
+    box-shadow: 0 4px 10px rgba(40,167,69,0.3); /* Green shadow on hover */
+}
+
+/* Tic-Tac-Toe Board Styling */
+#ticTacToeBoard {
+    display: grid;
+    grid-template-columns: repeat(3, 100px);
+    grid-template-rows: repeat(3, 100px);
+    width: 300px; /* Fixed width */
+    height: 300px; /* Fixed height */
+    margin: 0 auto;
+    border-radius: 10px; /* Consistent rounding */
+    overflow: hidden; /* Ensures cells stay within rounded corners */
+    background-color: #e0e0e0; /* Light grey for grid lines effect */
+    box-shadow: inset 0 0 10px rgba(0,0,0,0.1); /* Inner shadow for depth */
+    position: relative; /* For animations if needed */
+}
+
+.cell {
+    width: 100%;
+    height: 100%;
+    border: 1px solid #c0c0c0; /* Subtle grid lines */
+    box-sizing: border-box; /* Include padding/border in width/height */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 4.5em; /* Larger X/O */
+    font-weight: 700;
+    cursor: pointer;
+    transition: background-color 0.2s ease-in-out, transform 0.1s ease-out; /* Add transform transition */
+    user-select: none; /* Prevent text selection */
+    color: #2c3e50; /* Default text color, will be overridden by player-x/o */
+}
+
+.cell:hover:not(.player-x):not(.player-o) {
+    background-color: #f0f0f0; /* Lighter hover for empty cells */
+    transform: scale(1.03); /* Slight scale on hover */
+}
+
+/* Player Marks Styling */
+.cell.player-x {
+    color: #3498db; /* Blue for X (stronger, more professional) */
+    animation: cell-fill 0.3s ease-out forwards; /* Entry animation */
+}
+
+.cell.player-o {
+    color: #e74c3c; /* Red for O (stronger, more professional) */
+    animation: cell-fill 0.3s ease-out forwards; /* Entry animation */
+}
+
+/* Animation for cell fill */
+@keyframes cell-fill {
+    from { transform: scale(0.5); opacity: 0; }
+    to { transform: scale(1); opacity: 1; }
+}
+
+
+/* Game Status Message */
+#ticTacToeStatus {
+    margin-top: 20px;
+    font-size: 1.2em;
+    font-weight: 600;
+    color: #2c3e50;
+    min-height: 30px; /* Prevent layout shift */
+}
+
+/* Responsive adjustments for smaller screens */
+@media (max-width: 400px) {
+    #ticTacToeBoard {
+        width: 270px; /* Adjust board size */
+        height: 270px;
+        grid-template-columns: repeat(3, 90px); /* Adjust cell size */
+        grid-template-rows: repeat(3, 90px);
+    }
+    .cell {
+        font-size: 4em; /* Adjust X/O size */
+    }
+    .game-section h3 {
+        font-size: 1.6em;
+    }
+    .game-controls {
+        flex-direction: column; /* Stack controls vertically */
+        gap: 10px;
+    }
+    #ticTacToeMode, #ticTacToeRestartBtn {
+        width: 80%; /* Make buttons wider */
+    }
+}
+
+/* ... (existing social buttons and other sections) ... */
+
+/* Basic Social Button Styling */
+.social-btn {
+    background-color: #f0f0f0;
+    color: #333;
+    border: 1px solid #ccc;
+    padding: 10px 15px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    font-family: 'Poppins', sans-serif; /* Consistent font */
+}
+
+.social-btn:hover {
+    filter: brightness(0.9);
+}
+
+/* Specific button colors (optional) */
+.social-btn.instagram { background-color: #E4405F; color: white; border-color: #E4405F; }
+.social-btn.telegram { background-color: #0088CC; color: white; border-color: #0088CC; }
+.social-btn.youtube { background-color: #FF0000; color: white; border-color: #FF0000; }
+.social-btn.twitter { background-color: #1DA1F2; color: white; border-color: #1DA1F2; }
+
+.social-btn i {
+    font-size: 20px;
 }
